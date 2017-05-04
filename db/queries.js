@@ -23,11 +23,10 @@ function getAllcitizens(req, res, next) {
     });
 }
 
-// this function returns certian meal based on meal id useing one method
 function getOnecitizen(req, res, next) {
-  // parse the requirmen url to get the required item id
+
   let ss = parseInt(req.params.ss);
-  db.one('select * from information JOIN genders ON information.gender=genders.id  JOIN specieses ON information.species=specieses.id JOIN colors ON information.hair_color=colors.id JOIN cities ON information.address=cities.id where ss = $1', ss)
+  db.one('SELECT information.id  , information.ss, information.first , information.last , genders.gender , specieses.species , information.height , colors.color , information.occupation, information.wanted , cities.city , information.image FROM information JOIN genders ON genders.id = information.gender LEFT JOIN specieses ON specieses.id = information.species LEFT JOIN colors ON colors.id = information.hair_color LEFT JOIN cities ON cities.id = information.address where ss = $1', ss)
     .then(function(data) {
       res.status(200)
         .json({
@@ -79,7 +78,7 @@ function createcitizen(req, res, next) {
     });
 }
 
-// change the item information inside the database
+// change the information inside the database
 /*
  put
   {
