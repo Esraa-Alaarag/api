@@ -32,7 +32,7 @@ function getOnecitizen(req, res, next) {
         .json({
           status: 'success',
           data: data,
-          message: 'One meal citizen information Retrieved'
+          message: 'One citizen information Retrieved'
         });
     })
     .catch(function(err) {
