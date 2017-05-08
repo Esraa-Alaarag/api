@@ -5,7 +5,7 @@ let connString = process.env.DATABASE_URL
 // connect  db promise to my database
 let db = pgp(connString);
 
-
+// The axios get comes here
 function getAllcitizens(req, res, next) {
   // return all the records from the database
   db.any('SELECT information.id  , information.ss, information.first , information.last , genders.gender , specieses.species , information.height , colors.color , information.occupation, information.wanted , cities.city , information.image FROM information JOIN genders ON genders.id = information.gender LEFT JOIN specieses ON specieses.id = information.species LEFT JOIN colors ON colors.id = information.color LEFT JOIN cities ON cities.id = information.city;')
@@ -22,7 +22,7 @@ function getAllcitizens(req, res, next) {
       return next(err);
     });
 }
-
+// The axios get : ss comes here
 function getOnecitizen(req, res, next) {
 
   let ss = parseInt(req.params.ss);
@@ -109,7 +109,7 @@ function updatecitizen(req, res, next) {
       return next(err);
     });
 }
-// this function delete meals by putting the id after url
+// this function delete person whos ss is after url
 function deletecitizen(req, res, next) {
   let ss = parseInt(req.params.ss);
   db.result('delete from information where ss = $1', ss)
