@@ -114,13 +114,26 @@ function deletecitizen(req, res, next) {
   let ss = parseInt(req.params.ss);
   db.result('delete from information where ss = $1', ss)
     .then(function(result) {
+      if(result.rowCount){
+      console.log(result);
       res.status(200)
         .json({
           status: 'success',
           message: `Removed ${result.rowCount} citizen`
-        });
+        }
+
+        );}
+        else
+        {
+           res.status(404)
+        .json({
+          status: 'failed',
+          message: `Citizen not found`
+        })
+        }
     })
     .catch(function(err) {
+      console.log(err)
       return next(err);
     });
 }

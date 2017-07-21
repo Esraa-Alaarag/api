@@ -3,7 +3,7 @@ var router = express.Router();
 var db = require('../db/queries');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Zootopia' });
 });
 router.get('/api/information', db.getAllcitizens);
 router.get('/api/information/:ss', db.getOnecitizen);

@@ -1,11 +1,112 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title> API Documentation</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    
+    <p>Welcome to <%= title %> API Documentation</p>
+	<h2>GET</h2>
+    <details>
+    <summary>
+    	View all citizens information through web browser
+    </summary>
+    <p>GET /api/information/</p>
+    </details>
+
+
+    <details>
+    <summary>
+    	View one citizen information through web browser
+    </summary>
+    <p>GET /api/information/social security number</p>
+    <h4>ex:</h4>
+    <p>GET /api/information/2592302</p>
+    </details>
+
+	<h2>POST</h2>
+    <details>
+    <summary>
+    	Add one citizen data using Postman
+    </summary>
+    <p>POST /api/information</p>
+    <h4>ex:</h4>
+    <pre>
+    POST
+    {
+    "ss" : 123456,
+    "first": "will",
+    "last": "smith",
+    "gender": 2,
+    "species": 1,
+    "height": 3,
+    "color": 1,
+    "occupation": "actor",
+    "wanted": false,
+    "city": 1,
+    "image": "http://www.celebritycarsblog.com/wp-content/uploads/Will-Smith.jpg"
+  	}
+  	</pre>
+  	<pre>
+  	Result:
+  	{
+     	"status": "success",
+     	"message": "One citizen Inserted"
+	}
+	</pre>
+    </details>
+	
+	<h2>PUT</h2>
+	<details>
+    <summary>
+    	change one citizen data using Postman
+    </summary>
+    <p>PUT /api/information/social security number</p>
+    <h4>ex:</h4>
+    <p>PUT/api/information/123456</p>
+    <pre>
+    PUT
+    {
+	    "ss" : 123456,
+	    "first": "Willard",
+	    "last": "Carroll",
+	    "gender": 2,
+	    "species": 1,
+	    "height": 3,
+	    "color": 1,
+	    "occupation": "web developer",
+	    "wanted": false,
+	    "city": 1,
+	    "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/WillSmithMay10.jpg"
+  	}
+    </pre>
+    <pre>
+    Result:
+    {
+	"status": "success",
+	"message": "citizen Updated"
+	}
+    </pre>
+    </details>
+
+    <h2>DELETE</h2>
+    <details>
+    <summary>
+    	Delete one citizen using Postman
+    </summary>
+    <p>DELETE /api/information/social security number</p>
+    <h4>ex:</h4>
+    <p>DELETE api/information/2592302</p>
+    <pre>
+    Result:
+    {
+    "status": "success",
+    "message": "Removed 1 citizen"
+	}
+    </pre>
+	</details>
+
   </body>
 </html>

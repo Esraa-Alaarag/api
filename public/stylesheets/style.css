@@ -4,5 +4,15 @@ body {
 
 a {
   color: #00B7FF; }
-
+pre{
+	width: 100%;
+	background: lightgray;
+	border: 1px black solid;
+}
+h2{
+	background: lightblue;
+	border: 1px black solid;
+	margin: 10px;
+	padding: 10px;
+}
 /*# sourceMappingURL=style.css.map */
