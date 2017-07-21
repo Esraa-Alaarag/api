@@ -21,11 +21,18 @@
 
 Zootopia is an application for Zootopia Embassy that helps people who apply to renew their passport to track their passport renewal process.
 ### This project consists of three parts:
-1.Zootopia API: This app works as Restful API to store all Zootopia citizens information and provide the embassy with detailed information on every citizen.This API provides.
+1.Zootopia API: 
+This app works as Restful API to store all Zootopia citizens information and provide the embassy with detailed information on every citizen.This API provides.
 *	Basic CRUD (Create, Read, Update and Delete) with postman.
-*	Cross-origin Resource Sharing using by using CORS middleware.2.Embassy of Zootopia appThe embassy staff can transfer and store the information of the people who wants to renew their passport from Zootopia Database to the embassy local database.
+*	Cross-origin Resource Sharing using by using CORS middleware.
+
+#### Live demo: https://zootopia-api.herokuapp.com/2.Embassy of Zootopia app:
+The embassy staff can transfer and store the information of the people who wants to renew their passport from Zootopia Database to the embassy local database.
 Once the person is added to the local database, the embassy staff can add more information. 
-3.Zootopia citizen APP:a customized HTML template for the citizen of Zootopia to check the status of their passport renewal application.a user by entering the social security number can find out where is his passport.
+
+#### Live demo:
+3.Zootopia citizen APP:
+A customized HTML template for the citizen of Zootopia to check the status of their passport renewal application.Applicants can enter their social security number to check the status of their passport.#### Live demo: https://esraa-alaarag.github.io/zootopia/
 
 </a>
 
